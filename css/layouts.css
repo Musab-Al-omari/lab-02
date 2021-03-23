@@ -6,11 +6,20 @@ header{
     text-align: center;
     font-size: xx-large;
 }
+header h1{
+    color: rgb(245, 179, 179);
+    font-size: 50px;
+    
+}
+#selectMenu2{
+    display: block;
+    margin-left: 45%;
+}
 select{
     font-size: xx-large;
     margin-top: 15px;
 }
-div{
+section{
     display: inline-block;
     border: 5px solid rgb(255, 0, 0) ;
     margin-top: 20px;
@@ -20,16 +29,17 @@ div{
     margin-left: auto;
 }
 img{
+    
     max-width: 500px;
     height: 300px;
 }
-div p {
+section p {
     font-size: 30px;
     margin: 10px 0px;
     border-style: solid;
    
 }
-div h2{
+section h2{
     margin: 10px 0px;
     font-size: 40px;
 }
