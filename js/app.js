@@ -115,36 +115,36 @@ let myNewEvent = function () {
 }
 
 
-// function sortingByTitle() {
-//     Bringer.all.sort(function (a, b) {
-//         var nameA = a.title
-//         var nameB = b.title
-//         if (nameA < nameB) {
-//             return -1;
-//         }
-//         if (nameA > nameB) {
-//             return 1;
-//         }
+function sortingByTitle() {
+    Bringer.all.sort(function (a, b) {
+        var nameA = a.title
+        var nameB = b.title
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
 
-//         return 0;
-//     });
+        return 0;
+    });
 
-// }
+}
 
-// function sortByNumOfHorns() {
-//     Bringer.all.sort(function (a, b) {
-//         var numA = a.horns
-//         var numB = b.horns
-//         if (numA < numB) {
-//             return -1;
-//         }
-//         if (numA > numB) {
-//             return 1;
-//         }
+function sortByNumOfHorns() {
+    Bringer.all.sort(function (a, b) {
+        var numA = a.horns
+        var numB = b.horns
+        if (numA < numB) {
+            return -1;
+        }
+        if (numA > numB) {
+            return 1;
+        }
 
-//         return 0;
-//     });
-// }
+        return 0;
+    });
+}
 
 
 function getFromDate() {
