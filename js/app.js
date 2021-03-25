@@ -30,13 +30,13 @@ Bringer.prototype.render = function () {
     // workBox.find('p').text(this.description);
     // $('main').append(workBox);
 
-    
     let workBox = $('#photo-template').clone();
     workBox.addClass(this.keyword)
     workBox.find('h2').text(this.title);
     workBox.find('img').attr('src', this.image_url);
     workBox.find('p').text(this.description);
     workBox.removeAttr('id');
+
     $('main').append(workBox);
 
 }
@@ -71,18 +71,18 @@ let dropDownTow = function () {
 
 let myEvent = function () {
 
-    $('#selectMenu').on('change', function () {
-        let selected = $(this).val();
-        console.log(selected);
-        $('section').hide();
-        if (selected === 'default') {
-            $('section').show();
+$('#selectMenu').on('change', function () {
+    let selected = $(this).val();
+    console.log(selected);
+    $('section').hide();
+    if (selected === 'default') {
+        $('section').show();
 
-        } else {
-            $(`.${selected}`).fadeIn(800);
-        }
+    } else {
+        $(`.${selected}`).fadeIn(800);
+    }
 
-    });
+});
 }
 
 
@@ -90,30 +90,38 @@ let myEvent = function () {
 let myNewEvent = function () {
 
 
-    $('#selectMenuSecond').on('change', function () {
-        let newSelect = $(this).val();
-        console.log(newSelect);
-        if (newSelect === 'Title') {
-            // console.log("HELLO");
-            sortingByTitle()
-            $('section').html('');
-            Bringer.all.forEach(element => {
-                element.render();
-            });
+$('#selectMenuSecond').on('change', function () {
+    let newSelect = $(this).val();
+    console.log(newSelect);
+    if (newSelect === 'Title') {
+        // console.log("HELLO");
+        sortingByTitle();
+        emptyHTML();
+        // $('section').html('');
+        Bringer.all.forEach(element => {
+            element.render();
+        });
 
-        } else if (newSelect === 'NumberOfHorns') {
-            sortByNumOfHorns();
-            $('#photo-template').html('');
-            Bringer.all.forEach(element => {
-                element.render();
-            });
+    } else if (newSelect === 'NumberOfHorns') {
+        sortByNumOfHorns();
+        emptyHTML();
+        Bringer.all.forEach(element => {
+            element.render();
+        });
 
 
-        }
+    }
 
-    })
+})
 }
 
+
+function emptyHTML() {
+    $('main').html('');
+    $('main').append('<section id="photo-template"></section>');
+    $('#photo-template').append('<h2></h2><img><p></p>');
+    console.log('test')
+}
 
 function sortingByTitle() {
     Bringer.all.sort(function (a, b) {
